@@ -1,0 +1,456 @@
+body {
+    background-color: lightyellow;
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+p {
+    margin: 20px;
+}
+
+/******************* Rectangles *****************/
+
+.box {
+    display: inline-block;
+    height: 120px;
+    width: 180px;
+    margin: 20px;
+    background-color: lightsalmon;
+}
+
+.box.one {
+    /*makes this selector stronger than the common box selector*/
+    border: none;
+    /* is used to rewrite the property to a new one with no cnages to other boxes*/
+    border: 3px solid red;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    /* border-radius: 0 30px 0 30px; */
+}
+
+.two {
+    border: 3px dashed red;
+    border-radius: 0 30px 0 30px;
+}
+
+.three {
+    border: 3px solid red;
+    border-top-right-radius: 90px 10px;
+}
+
+.box {
+    border: 6px solid green;
+}
+
+/******************* Circle *****************/
+
+.circle {
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+    background-color: lightsalmon;
+    border: 3px solid red;
+    border-radius: 50%;
+}
+
+/* background-color: lightsalmon; it will show you the square with your triangle on top*/
+/* border: 3px solid red; if you right this way you will get a 3x3 square instead of a triangle */
+
+/******************* Triangles *****************/
+
+.triangle {
+    display: inline-block;
+    height: 0;
+    width: 0;
+    margin: 20px;
+}
+
+.down {
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid lightsalmon;
+}
+
+.up {
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid lightsalmon;
+}
+
+.right {
+    border-left: 100px solid lightsalmon;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+}
+
+.left {
+    border-right: 100px solid lightsalmon;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+}
+
+.right-90deg {
+    border-left: 100px solid lightsalmon;
+    border-top: 100px solid transparent;
+    border-bottom: 0;
+}
+
+/******************* PopUp Window *****************/
+
+.popup {
+    height: 200px;
+    width: 360px;
+    margin: 20px;
+    background-color: lightsalmon;
+    border-radius: 5px;
+    position: relative;
+}
+
+.popup:after {
+    content: '';
+    position: absolute;
+
+    height: 0;
+    width: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid lightsalmon;
+
+    bottom: -10px;
+    left: 175px;
+}
+
+/* .background-lesson {
+    width: 900px;
+    height: 600px;
+    border: 3px solid red;
+    background-color: white;
+    background-image: url(images/bluejay.png), url(images/floor-tile.png);
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+} 
+this is a longer variant of the one below
+*/
+
+/******************* Bird Photo *****************/
+
+.bird {
+    width: 900px;
+    height: 600px;
+    margin: 20px;
+    border: 3px solid red;
+    background: url(images/bluejay.png) no-repeat center,
+        url(images/floor-tile.png) repeat;
+}
+
+/******************* Bird Text *****************/
+
+.birdstory {
+    width: 900px;
+    margin: 20px;
+    border: 3px solid red;
+}
+
+.birdstory p {
+    margin: 20px;
+}
+
+.text2 {
+    column-count: 3;
+}
+.birdstory img {
+    float: left;
+    width: 50px;
+    margin: 20px;
+}
+
+/******************* List *****************/
+
+ul.birdname {
+    margin: 20px;
+    padding: 0;
+    /* list-style-type: square;
+    list-style-position: inside;
+    list-style-image: url(images/bird-icon.svg); */
+    list-style: square inside url('https://api.iconify.design/clarity:bug-solid.svg?color=red');
+}
+
+/******************* Button *****************/
+
+.button {
+    margin: 20px;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: lightyellow;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 3px 20px rgba(156, 81, 52, 0.20),
+        0 2px 0 rgba(156, 81, 52, 0.05),
+        inset 0 3px 0 rgba(255, 255, 255, .3),
+        inset 0 0 15px rgba(255, 255, 255, .1),
+        inset 0 0 25px rgba(255, 255, 255, 0.05);
+}
+
+.button:hover {
+    box-shadow: 0 3px 20px rgba(255, 255, 255, 0.20),
+        0 3px 0 rgba(255, 255, 255, .3),
+        inset 0 2px 0 rgba(156, 81, 52, 0.05),
+        inset 0 0 20px rgba(156, 81, 52, .1),
+        inset 0 0 40px rgba(156, 81, 52, 0.05);
+}
+
+.button::after {
+    content: '';
+    background: url(images/bird-icon.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .6;
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+/***********Menu************/
+
+.navigation {
+    text-transform: uppercase;
+    padding: 0;
+    margin: 20px;
+    list-style: none;
+    width: 50px;
+}
+
+.navigation li {
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    transition: width .2s ease-in-out, height .2s ease-in-out .2s;
+}
+
+.navigation li:hover {
+    width: 200px;
+    height: 170px;
+}
+
+.navigation li a {
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    background: lightsalmon;
+    color: white;
+    margin: 1px;
+    padding-left: 15px;
+    cursor: pointer;
+    /* transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out; */
+    transition: background .2s ease-in-out;
+}
+
+.navigation li a:hover {
+    background: red;
+}
+
+.navigation li a:first-child {
+    font-size: 1.1em;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    text-indent: 36px;
+}
+
+.navigation li a:first-child::before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 32px;
+    top: 9px;
+    left: 9px;
+}
+
+.main-menu a:first-child::before {
+    background: url('https://api.iconify.design/clarity:auto-line.svg?color=white') no-repeat center center / contain;
+}
+
+.settings a:first-child::before {
+    background: url('https://api.iconify.design/clarity:atom-line.svg?color=white') no-repeat center center / contain;
+}
+
+.link a:first-child::before {
+    background: url('https://api.iconify.design/clarity:bicycle-line.svg?color=white') no-repeat center center / contain;
+}
+
+.search a:first-child::before {
+    background: url('https://api.iconify.design/clarity:boat-line.svg?color=white') no-repeat center center / contain;
+}
+
+/******************* Gradients *****************/
+
+.gradients {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    background: lightseagreen;
+    margin: 20px;
+    border-radius: 16px;
+
+    background: linear-gradient(-15deg, lightseagreen, lightsalmon);
+}
+
+.transform {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    background: lightseagreen;
+    margin: 20px;
+    border-radius: 16px;
+    text-align: center;
+    line-height: 200px;
+    color: white;
+    transform: translate(60px) rotate(30deg);
+}
+
+#wrapper {
+    margin: 100px 20px;
+    perspective: 900px;
+}
+
+#cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-origin: 50% 50% -150px;
+    transform-style: preserve-3d;
+    transition: all 1s;
+}
+
+/* #cube:hover {
+    transform: rotate(45deg);
+} */
+
+.side {
+    width: 300px;
+    height: 300px;
+    background: rgb(255, 160, 122);
+    background: radial-gradient(rgba(255, 255, 255, .1), rgba(255, 160, 122, .5));
+    position: absolute;
+    border: 10px solid red;
+    font-size: 5em;
+    line-height: 300px;
+    text-align: center;
+
+    transform-origin: 50% 50% -150px;
+    backface-visibility: hidden;
+
+}
+
+#side2 {
+    transform: rotateY(90deg);
+}
+
+#side3 {
+    transform: rotateY(-90deg);
+}
+
+#side4 {
+    transform: rotateX(90deg);
+}
+
+#side5 {
+    transform: rotateX(-90deg);
+}
+
+#side6 {
+    transform: rotateY(180deg);
+}
+
+.square {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 60px;
+    background: lightsalmon;
+    box-shadow: 0 0 4px rgba(255, 160, 122, .4);
+    animation: 4s linear infinite;
+
+    /* animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; */
+}
+
+.square:hover {
+    animation-play-state: paused;
+} 
+
+.clockwise {
+    animation-name: clockwise-spin;
+}
+
+@keyframes clockwise-spin{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.counterclockwise {
+    animation-name: counterclockwise-spin;
+}
+
+@keyframes counterclockwise-spin{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.reverse {
+    animation-name: rvrs-spin;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes rvrs-spin{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.bar {
+    width: 600px;
+    height: 40px;
+    background: lightseagreen;
+    border: 3px solid lightseagreen;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 20px;
+}
+.indicator {
+    width: 1200px;
+    height: 40px;
+    background: white;
+    animation: slide 5s linear infinite;
+}
+
+@keyframes slide {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: 100%;
+    }
+}
+
+/******************* CSS Grid************ */
+
